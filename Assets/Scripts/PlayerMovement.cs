@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 5;
     public Rigidbody rb;
+    public Vector3 targetPos = Vector3.zero;
 
     float horizontalInput;
     public float horizontalMultiplier = 2;
@@ -39,7 +40,26 @@ public class PlayerMovement : MonoBehaviour
         Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
 
+        /*float rightBoundary = 2f;
+        if (transform.position.x >= rightBoundary)
+        {
+            transform.position = new Vector3(rightBoundary, transform.position.y, 0);
+        }*/
 
+
+
+        /*if (transform.position.x > 2)
+        {
+            targetPos = transform.position;
+            targetPos.x = 2;
+            transform.position = targetPos;
+        }
+        if (transform.position.x < -2)
+        {
+            targetPos = transform.position;
+            targetPos.x = -2;
+            transform.position = targetPos;
+        }*/
     }
 
 
