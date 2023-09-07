@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlashMaterial
+  m_Name: bSlashMaterial 1
   m_Shader: {fileID: -6465566751694194690, guid: 062f97824559e2842a99e42c8093b470,
     type: 3}
   m_ValidKeywords: []
@@ -45,8 +45,11 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _VoronoiPower: 0.64
+    - _VoronoiScale: 10
+    - _VoronoiSpeed: 1
     m_Colors:
-    - _Color: {r: 2, g: 2, b: 2, a: 1}
+    - _Color: {r: 0, g: 13.262702, b: 72.65929, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4604823669004334448
 MonoBehaviour:

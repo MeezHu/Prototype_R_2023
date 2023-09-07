@@ -9,6 +9,9 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask B_DestructibleLayer;
     public float attackRange = 2f;
 
+    public ParticleSystem oSlash;
+    public ParticleSystem bSlash;
+
 
 
 
@@ -17,12 +20,30 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            oSlash.Play();
+
             AttackO();
         }
 
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            oSlash.Stop();
+
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.E))
         {
+            bSlash.Play();
+
             AttackB();
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            bSlash.Stop();
+
         }
 
     }

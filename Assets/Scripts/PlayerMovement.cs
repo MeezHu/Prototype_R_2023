@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedIncrease = 1f;
 
+    [SerializeField] float jumpForce = 400f;
+    [SerializeField] LayerMask groundMask;
+
     /*private void speedIncreaseCap()
     {
         speed = speed += speedIncrease * Time.deltaTime;
@@ -70,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
 
         horizontalInput = Input.GetAxis("Horizontal");
         
@@ -90,6 +98,14 @@ public class PlayerMovement : MonoBehaviour
     public void BumpVariable()
     {
         speed = -10;
+    }
+
+    void Jump()
+    {
+        float height = GetComponent<Collider>().bounds.size.y;
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+
+        rb.AddForce(Vector3.up * jumpForce);
     }
 
 }
