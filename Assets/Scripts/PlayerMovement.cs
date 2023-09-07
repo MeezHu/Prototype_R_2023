@@ -100,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
         speed = -10;
     }
 
+    public void SpeedBoost()
+    {
+        speed = +10;
+    }
+
     void Jump()
     {
         float height = GetComponent<Collider>().bounds.size.y;
