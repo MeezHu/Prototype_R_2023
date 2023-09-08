@@ -97,12 +97,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void BumpVariable()
     {
-        speed = -10;
+        speed = -7;
     }
 
     public void SpeedBoost()
     {
-        speed = +10;
+        speed += 5;
     }
 
     void Jump()
