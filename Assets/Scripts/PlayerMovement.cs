@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 400f;
     [SerializeField] LayerMask groundMask;
 
+    public ParticleSystem SpeedCap;
+
     /*private void speedIncreaseCap()
     {
         speed = speed += speedIncrease * Time.deltaTime;
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         if (speed >= 30)
         {
             speed = 30;
+
         }
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
@@ -80,7 +83,14 @@ public class PlayerMovement : MonoBehaviour
 
 
         horizontalInput = Input.GetAxis("Horizontal");
+
+        if (speed >= 30)
+        {
+            SpeedCap.Play();
+
+        }
         
+
     }
 
     /*public void Die()
@@ -112,5 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(Vector3.up * jumpForce);
     }
+
+
 
 }
