@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (speed >= 30)
+        if (speed >= 29)
         {
             SpeedCap.Play();
 
