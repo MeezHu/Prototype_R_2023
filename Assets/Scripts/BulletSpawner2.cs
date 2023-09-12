@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSpawner : MonoBehaviour
+public class BulletSpawner2 : MonoBehaviour
 {
     public GameObject item;
     public float delay = 2f;
@@ -12,7 +12,7 @@ public class BulletSpawner : MonoBehaviour
     void Start()
     {
         nextTimeToSpawn = Time.time;
-        
+
     }
 
     void Update()
@@ -21,21 +21,21 @@ public class BulletSpawner : MonoBehaviour
         {
             nextTimeToSpawn = Time.time + delay;
             GameObject go = Instantiate(item, transform.position, Quaternion.identity);
-            go.AddComponent<Move>();
-            go.GetComponent<Move>().speed = speed;
+            go.AddComponent<Move2>();
+            go.GetComponent<Move2>().speed = speed;
 
         }
-        
+
     }
 }
 
-public class Move : MonoBehaviour
+public class Move2 : MonoBehaviour
 {
     public float speed;
 
     void Update()
     {
-        transform.Translate(Vector3.back * Time.deltaTime * speed);
+        transform.Translate(Vector3.right * Time.deltaTime * speed);
     }
 
     void OnBecameInvisible()
