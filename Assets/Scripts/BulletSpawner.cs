@@ -25,8 +25,11 @@ public class BulletSpawner : MonoBehaviour
             go.GetComponent<Move>().speed = speed;
 
         }
+
+
         
     }
+
 }
 
 public class Move : MonoBehaviour

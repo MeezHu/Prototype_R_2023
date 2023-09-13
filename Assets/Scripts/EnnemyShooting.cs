@@ -36,4 +36,6 @@ public class EnnemyShooting : MonoBehaviour
         bulletRig.AddForce(bulletRig.transform.forward * enemySpeed);
         Destroy(bulletObj, 5f);
     }
+
+   
 }
