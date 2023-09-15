@@ -7,15 +7,18 @@ public class BulletScript : MonoBehaviour
     //[SerializeField] private HealthBar healthbar;
     [SerializeField] GameObject player;
     [SerializeField] GameObject healthbar;
-    //[SerializeField] private Health health;
+    Health health;
+
 
 
 
     void Awake()
     {
-        //health = player.GetComponent<Health>();
+        health = player.GetComponent<Health>();
+
 
     }
+
 
 
 
@@ -28,14 +31,12 @@ public class BulletScript : MonoBehaviour
             
             Health.currentHealth--;
             
+            
             Destroy(gameObject);
         }
+
 
         
     }
 
-    /*void Update()
-    {
-        
-    }*/
 }

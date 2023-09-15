@@ -8,9 +8,12 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public int maxHealth = 3;
+    public int RcurrentHealth;
     public static int currentHealth;
     //public Image healthBar;
     //[SerializeField] private HealthBar healthbar;
+
+    public Slider healthbarUI;
 
     void Start()
     {
@@ -20,11 +23,16 @@ public class Health : MonoBehaviour
 
     }
 
-    
-
     private void Update()
     {
+        UpdateHealthBar();
+
         death();
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthbarUI.value = currentHealth;
     }
 
     public void death()
@@ -34,5 +42,7 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+
+    
 
 }
