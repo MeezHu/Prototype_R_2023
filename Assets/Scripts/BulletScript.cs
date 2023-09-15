@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    [SerializeField] private HealthBar _healthbar;
+    //[SerializeField] private HealthBar healthbar;
     [SerializeField] GameObject player;
-    //Health health;
+    [SerializeField] GameObject healthbar;
+    //[SerializeField] private Health health;
+
 
 
     void Awake()
     {
         //health = player.GetComponent<Health>();
+
     }
+
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,6 +25,7 @@ public class BulletScript : MonoBehaviour
         {
             Debug.Log("Player hit");
             //health.currentHealth = (health.maxHealth -= 1);
+            
             Health.currentHealth--;
             
             Destroy(gameObject);
