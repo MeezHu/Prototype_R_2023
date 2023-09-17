@@ -16,13 +16,23 @@ public class bhPlayerMovement : MonoBehaviour
 
     private Vector3 effectiveDirection = Vector3.zero;
 
+    public bool dashing = true;
+    private float dashingPower = 1f;
+    private float dashingTime = 0.3f;
+    //private float dashingCooldown = 0.1f;
+
+    [SerializeField] private TrailRenderer tr;
+
+
 
 
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        
+
+        tr.emitting = false;
+
     }
 
     void Update()
@@ -43,5 +53,25 @@ public class bhPlayerMovement : MonoBehaviour
 
         effectiveDirection = Vector3.Lerp(effectiveDirection, inputDirection, directionSmooth);
         characterController.Move(effectiveDirection * speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space) && dashing)
+        {
+            Debug.Log("Dashing");
+            StartCoroutine(Dash());
+        }
+
+    }
+
+    private IEnumerator Dash()
+    {
+        dashing = true;
+        tr.emitting = true;
+
+        effectiveDirection = new Vector3(transform.forward.x * dashingPower, 0f, transform.forward.z * dashingPower);
+        yield return new WaitForSeconds(dashingTime);
+        effectiveDirection = Vector3.zero;
+        tr.emitting = false;
+        /*yield return new WaitForSeconds(dashingCooldown);
+        dashing = true;*/
     }
 }

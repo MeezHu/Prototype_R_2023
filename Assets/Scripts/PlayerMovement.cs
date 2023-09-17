@@ -25,11 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem SpeedCap;
 
-    /*private void speedIncreaseCap()
-    {
-        speed = speed += speedIncrease * Time.deltaTime;
-
-    }*/
 
     private void FixedUpdate ()
     {
@@ -46,26 +41,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
 
-        /*float rightBoundary = 2f;
-        if (transform.position.x >= rightBoundary)
-        {
-            transform.position = new Vector3(rightBoundary, transform.position.y, 0);
-        }*/
-
-
-
-        /*if (transform.position.x > 2)
-        {
-            targetPos = transform.position;
-            targetPos.x = 2;
-            transform.position = targetPos;
-        }
-        if (transform.position.x < -2)
-        {
-            targetPos = transform.position;
-            targetPos.x = -2;
-            transform.position = targetPos;
-        }*/
     }
 
 
@@ -89,21 +64,11 @@ public class PlayerMovement : MonoBehaviour
             SpeedCap.Play();
 
         }
-        
 
     }
 
-    /*public void Die()
-    {
-        alive = false;
-        // Restart the game
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }*/
 
-    /*public void BumpForce()
-    {
-        rb.AddForce(new Vector3(0f, 0f, 0f));
-    }*/
+    
 
     public void BumpVariable()
     {
