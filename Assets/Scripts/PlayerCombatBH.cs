@@ -16,9 +16,11 @@ public class PlayerCombatBH : MonoBehaviour
     public bool isActive1;
     public bool isActive2;
     public bool isActive3;
+    public bool isActive4;
     public GameObject Ennemy1;
     public GameObject Ennemy2;
     public GameObject Ennemy3;
+    public GameObject wpEnemy3;
 
 
 
@@ -71,6 +73,7 @@ public class PlayerCombatBH : MonoBehaviour
         if (isActive2 == false & isActive1 == false)
         {
             Ennemy3.SetActive(true);
+            wpEnemy3.SetActive(true);
         }
 
         
@@ -103,6 +106,7 @@ public class PlayerCombatBH : MonoBehaviour
         {
             isActive2 = false;
             isActive3 = true;
+            isActive4 = true;
             Debug.Log("We hit " + B_Destructible.name);
 
         }

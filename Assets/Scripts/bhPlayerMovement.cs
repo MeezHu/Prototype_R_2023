@@ -17,8 +17,8 @@ public class bhPlayerMovement : MonoBehaviour
     private Vector3 effectiveDirection = Vector3.zero;
 
     public bool dashing = true;
-    private float dashingPower = 1f;
-    private float dashingTime = 0.3f;
+    private float dashingPower = 2.2f;
+    private float dashingTime = 0.1f;
     //private float dashingCooldown = 0.1f;
 
     [SerializeField] private TrailRenderer tr;

@@ -31,9 +31,9 @@ public class PlayerMovement : MonoBehaviour
         if (!alive) return;
 
         speed = speed += speedIncrease * Time.deltaTime;
-        if (speed >= 30)
+        if (speed >= 60)
         {
-            speed = 30;
+            speed = 60;
 
         }
 
@@ -64,6 +64,10 @@ public class PlayerMovement : MonoBehaviour
             SpeedCap.Play();
 
         }
+        else
+        {
+            SpeedCap.Stop();
+        }
 
     }
 
@@ -72,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void BumpVariable()
     {
-        speed = -7;
+        speed = -5;
     }
 
     public void SpeedBoost()
